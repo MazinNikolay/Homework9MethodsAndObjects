@@ -27,22 +27,30 @@ public class Library {
     }
 
     public void printOnName(String name) {
-        for (Book bookIterator : library) {
-            if (name.equals(bookIterator.getNameBook())) {
-                System.out.println("\"" + bookIterator.getNameBook() + " by " + bookIterator.getAuthor() + " was published in " + bookIterator.getPublishingYear() + "\"");
-                return;
+        if (library[0] != null) {
+            for (Book bookIterator : library) {
+                if (name.equals(bookIterator.getNameBook())) {
+                    System.out.println("\"" + bookIterator.getNameBook() + " by " + bookIterator.getAuthor() + " was published in " + bookIterator.getPublishingYear() + "\"");
+                    return;
+                }
             }
+            System.out.println("Такой книги нет");
+        } else {
+            System.out.println("Массив пустой");
         }
-        System.out.println("Такой книги нет");
     }
 
     public void changePublishingYearOnName(String name, int newPublishingYear) {
-        for (Book bookIterator : library) {
-            if (name.equals(bookIterator.getNameBook())) {
-                bookIterator.setPublishingYear(newPublishingYear);
-                return;
+        if (library[0] != null) {
+            for (Book bookIterator : library) {
+                if (name.equals(bookIterator.getNameBook())) {
+                    bookIterator.setPublishingYear(newPublishingYear);
+                    return;
+                }
             }
+            System.out.println("Такой книги нет");
+        } else {
+            System.out.println("Массив пустой");
         }
-        System.out.println("Такой книги нет");
     }
 }

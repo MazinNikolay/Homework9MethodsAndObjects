@@ -45,7 +45,7 @@ public class App {
                 if (books[i] == null) {
                     books[i] = book;
                     callBookCount++;
-                    return;
+                    break;
                 }
             }
         } else {
